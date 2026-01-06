@@ -9,6 +9,7 @@ import {
   UserButton,
 } from '@clerk/nextjs'
 import { ThemeProvider } from "@/components/theme-provider";
+import { ConvexClientProvider } from "@/components/convex-client-provider";
 
 import { dark, neobrutalism } from "@clerk/themes";
 
@@ -55,7 +56,10 @@ export default function RootLayout({
           </SignedIn>
         </header>
         <ThemeProvider attribute="class" defaultTheme="dark" enableSystem disableTransitionOnChange>
-          {children}
+          <ConvexClientProvider>
+
+            {children}
+          </ConvexClientProvider>
         </ThemeProvider>
       </body>
     </html>
