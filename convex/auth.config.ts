@@ -1,6 +1,12 @@
 import { AuthConfig } from "convex/server";
 
+
+if (!process.env.CLERK_JWT_ISSUER_DOMAIN) {
+  throw new Error("CLERK_JWT_ISSUER_DOMAIN not set");
+}
+
 export default {
+
   providers: [
     {
       domain: process.env.CLERK_JWT_ISSUER_DOMAIN!,
