@@ -32,7 +32,7 @@ export const Providers = ({ children }: { children: React.ReactNode }) => {
           </AuthLoading>
         </ThemeProvider>
 
-      </  ConvexProviderWithClerk>
-    </  ClerkProvider>
+      </ConvexProviderWithClerk>
+    </ClerkProvider>
   );
 }
