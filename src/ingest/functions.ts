@@ -36,8 +36,27 @@ export const demoGenerate = inngest.createFunction(
     await step.run("generate-text", async () => {
       return await generateText({
         model: google("gemini-2.5-flash"),
+        experimental_telemetry: {
+          isEnabled: true,
+          recordInputs: true,
+          recordOutputs: true,
+        },
         prompt: finalPrompt,
       });
     });
   },
 );
+
+
+export const demoError = inngest.createFunction(
+  { id: "demo-error" },
+  { event: "demo/error" },
+  async ({ step }) => {
+    await step.run("fail", async () => {
+      throw new Error("inngest error: bg job problem");
+    });
+  }
+);
+
+
+
