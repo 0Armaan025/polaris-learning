@@ -18,7 +18,6 @@ export const Providers = ({ children }: { children: React.ReactNode }) => {
 
           <Authenticated>
 
-            <UserButton />
             {children}
           </Authenticated>
 
