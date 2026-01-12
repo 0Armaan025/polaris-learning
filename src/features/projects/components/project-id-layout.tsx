@@ -19,8 +19,18 @@ export const ProjectIdLayout = ({
   projectId: Id<"projects">;
 }) => {
 
+
+
+  if (!projectId) {
+    return (
+      <h3>Error</h3>
+    );
+  }
+
   return (
     <div className="w-full h-screen flex flex-col ">
+
+
       <Navbar projectId={projectId} />
       <div className="flex flex-1 overflow-hidden">
 
